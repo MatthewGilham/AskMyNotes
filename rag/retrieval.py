@@ -26,7 +26,6 @@ collection = chroma.get_collection(collection_name)
 
 RETRIEVAL_K = 20
 FINAL_K = 10
-
 SYSTEM_PROMPT = """You are an expert Tutor for the users (Matt) Kent Business School modules. The context contains \
 excerpts from my lecture slides, seminar slides and seminar solutions, retrieved for each question. \
 Each excerpt starts with its source.
