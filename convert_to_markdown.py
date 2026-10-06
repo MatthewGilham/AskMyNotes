@@ -9,10 +9,13 @@ Run from the project root:
 """
 import re
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 from markitdown import MarkItDown
 
-UNI = Path("/Users/matthewgilham/Desktop/All desktop folders/University")
+load_dotenv()
+UNI = Path(os.getenv("UNI_NOTES_DIR"))
 
 # source folder -> where its files go inside knowledge_base/ (year / module / type)
 SOURCES = {
