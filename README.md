@@ -14,8 +14,7 @@ anything from outside your notes, it labels it clearly.
 
 It is also a full general assistant, so one app covers study questions and everyday ones.
 
-This is a full rebuild of my earlier project,
-[AskMyNotes-v1](https://github.com/MatthewGilham/AskMyNotes-v1).
+This is a full rebuild of an earlier, simpler version I made.
 
 ## Features
 
