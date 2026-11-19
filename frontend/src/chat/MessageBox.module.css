@@ -1,0 +1,316 @@
+/* The message box is a pane of glass. Its edge is drawn separately (below),
+   so the pane's own edge is switched off. */
+.box {
+  composes: pane from "../design/glass.module.css";
+  --pane-edge: transparent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-3) var(--space-2) var(--space-4);
+  border-radius: var(--radius-box);
+  transition: box-shadow var(--transition-slow);
+  /* The name the browser knows the box by when it glides down on the first
+     message of a new chat (design/glide.ts). */
+  view-transition-name: message-box;
+}
+
+/* The edge: a hairline at rest, the accent gradient while the cursor is in
+   the box. A border can't be a gradient on a rounded box, so this is a layer
+   the size of the box with everything but a 1px rim masked away. */
+.box::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--color-hairline-strong);
+  mask:
+    linear-gradient(black 0 0) content-box exclude,
+    linear-gradient(black 0 0);
+  pointer-events: none;
+}
+
+.box:focus-within::before {
+  background: var(--gradient-signature);
+}
+
+.box:focus-within {
+  box-shadow:
+    var(--shadow-pane),
+    0 0 44px color-mix(in srgb, var(--color-accent) 14%, transparent);
+}
+
+/* The charge: while a reply is in progress (data-thinking on the app's root)
+   a band of the accent travels round the edge. This layer is the same masked
+   rim as the edge above, a little thicker. Inside it a square much larger
+   than the box, painted with a sweep of the accent, turns about the box's
+   centre; only the part crossing the rim shows. Turning it is a transform, so
+   the browser moves a ready-made picture instead of repainting each frame. */
+.charge {
+  display: none;
+  position: absolute;
+  inset: -1px;
+  padding: 1.5px;
+  border-radius: inherit;
+  overflow: hidden;
+  mask:
+    linear-gradient(black 0 0) content-box exclude,
+    linear-gradient(black 0 0);
+  pointer-events: none;
+}
+
+:global([data-thinking]) .charge {
+  display: block;
+}
+
+.charge::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: conic-gradient(
+    transparent 0 50%,
+    var(--color-accent-2),
+    var(--color-accent),
+    transparent 96%
+  );
+  animation: travel 2.2s linear infinite;
+}
+
+@keyframes travel {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* With Calm effects, or when the computer asks for less motion, nothing
+   travels: the whole edge simply brightens while a reply is written. */
+:global([data-effects="calm"]) .charge::before {
+  animation: none;
+  background: var(--gradient-signature);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .charge::before {
+    animation: none;
+    background: var(--gradient-signature);
+  }
+}
+
+.waiting {
+  opacity: 0.7;
+}
+
+.previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-1);
+}
+
+.preview {
+  position: relative;
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: var(--radius-m);
+  border: 1px solid var(--color-hairline-strong);
+  overflow: hidden;
+}
+
+.preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.removePreview {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  display: grid;
+  place-items: center;
+  width: var(--space-5);
+  height: var(--space-5);
+  border: none;
+  border-radius: var(--radius-round);
+  background: var(--color-base);
+  color: var(--color-text);
+  opacity: 0.85;
+}
+
+.removePreview:hover {
+  opacity: 1;
+}
+
+.input {
+  min-height: var(--space-6);
+  max-height: var(--message-box-max-height);
+  padding: var(--space-1) 0;
+  border: none;
+  background: none;
+  resize: none;
+  field-sizing: content; /* grows with its text, no script needed */
+  font-size: var(--text-m);
+  line-height: 1.5;
+}
+
+.input:focus-visible {
+  box-shadow: none;
+}
+
+.input::placeholder {
+  color: var(--color-faint);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* The "Python" button: off, it is a quiet outline; on, it is filled with the
+   accent. */
+.python {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: var(--space-6);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-round);
+  background: none;
+  color: var(--color-muted);
+  font-size: var(--text-s);
+  font-weight: 500;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.python:hover:not(:disabled) {
+  border-color: var(--color-hairline-strong);
+  color: var(--color-text);
+}
+
+.python:focus-visible {
+  outline: none;
+  border-color: var(--color-accent-2);
+  box-shadow: var(--shadow-focus);
+}
+
+.pythonOn,
+.pythonOn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 600;
+}
+
+.python:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.attach,
+.send {
+  display: grid;
+  place-items: center;
+  width: var(--control-size);
+  height: var(--control-size);
+  border: none;
+  border-radius: var(--radius-round);
+  transition:
+    background var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.attach {
+  background: none;
+  color: var(--color-muted);
+}
+
+.attach:hover:not(:disabled) {
+  background: var(--color-wash-strong);
+  color: var(--color-text);
+}
+
+/* The send button is the one solid piece of accent on the screen, and a
+   little larger than the controls beside it. */
+.send {
+  width: calc(var(--control-size) + var(--space-1));
+  height: calc(var(--control-size) + var(--space-1));
+  background: var(--gradient-signature);
+  color: var(--color-on-accent);
+}
+
+.send:hover:not(:disabled) {
+  transform: scale(1.07);
+  box-shadow: 0 0 26px color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+
+.send:disabled {
+  background: var(--color-wash-strong);
+  color: var(--color-faint);
+  cursor: default;
+}
+
+.attach:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.error {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-error-edge);
+  border-radius: var(--radius-m);
+  background: var(--color-error-tint);
+  font-size: var(--text-s);
+  color: var(--color-error);
+}
+
+.quoteActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.quoteActions button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-control);
+  background: none;
+  color: var(--color-muted);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+.quoteActions button:hover:not(:disabled) {
+  background: var(--color-wash-strong);
+  color: var(--color-text);
+}
+.quoteActions button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.status {
+  font-size: var(--text-s);
+  color: var(--color-muted);
+}

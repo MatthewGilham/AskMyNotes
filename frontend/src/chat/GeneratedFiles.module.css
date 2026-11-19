@@ -1,0 +1,177 @@
+/* The files Python made: pictures first, then a row of download chips. */
+.files {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* Pictures and chips sit on the panel colour, like the panels beside them. */
+.picture {
+  display: block;
+  max-width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-card);
+  background: var(--color-panel);
+  cursor: zoom-in;
+  transition: border-color var(--transition-fast);
+}
+
+.picture:hover {
+  border-color: var(--color-hairline-strong);
+}
+
+.picture:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.picture img {
+  display: block;
+  max-width: 100%;
+  max-height: 360px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-control);
+  background:
+    linear-gradient(var(--color-wash), var(--color-wash)), var(--color-panel);
+  color: var(--color-text);
+  font-size: var(--text-s);
+  text-decoration: none;
+  transition: border-color var(--transition-fast);
+}
+
+.chip:hover {
+  border-color: var(--color-hairline-strong);
+}
+
+.chip:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.chipIcon {
+  flex: none;
+  color: var(--color-accent-2);
+}
+
+.chipName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chipSize {
+  flex: none;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.chipDownload {
+  flex: none;
+  color: var(--color-muted);
+}
+
+/* The full-size viewer shares the dialogs' look: a pane of glass over a
+   dimmed, blurred page. */
+.overlay {
+  composes: fadeIn from "../design/glass.module.css";
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  background: var(--color-overlay);
+  backdrop-filter: var(--blur-overlay);
+}
+
+.viewer {
+  composes: pane fadeIn from "../design/glass.module.css";
+  position: fixed;
+  z-index: 40;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: calc(100vw - var(--space-6));
+  max-height: calc(100vh - var(--space-6));
+  transform: translate(-50%, -50%);
+  padding: var(--space-4);
+  --pane-edge: var(--color-hairline-strong);
+  border-radius: var(--radius-pane);
+}
+
+.viewerTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-m);
+  font-weight: 650;
+  font-stretch: 88%;
+}
+
+.full {
+  min-height: 0;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.viewerButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.viewerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-control);
+  background: none;
+  color: var(--color-text);
+  font-size: var(--text-s);
+  text-decoration: none;
+}
+
+.viewerButton:hover {
+  background: var(--color-wash-strong);
+}
+
+.viewerButton:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

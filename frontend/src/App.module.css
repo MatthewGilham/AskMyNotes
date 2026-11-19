@@ -1,0 +1,54 @@
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  height: 100%;
+}
+
+/* The sidebar opened in a narrow window: it floats over the page, above a
+   dimmed backdrop, so the conversation keeps its width. */
+.floating {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  animation: fade-in var(--transition-slow);
+}
+
+/* The sidebar inside keeps its own gutter, so it lands exactly over the rail. */
+.floatingPanel {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: fit-content;
+  animation: slide-in var(--transition-slow);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .floatingPanel {
+    animation: none;
+  }
+}

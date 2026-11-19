@@ -1,0 +1,59 @@
+/* Dark glass: the look shared by everything that floats over the backdrop
+   (the sidebar, the chat header, menus and dialogs). Other stylesheets take it
+   with `composes`, and add their own shape and size. A pane that wants a
+   different edge sets --pane-edge, which works whatever order the two
+   stylesheets end up in. */
+.pane {
+  border: 1px solid var(--pane-edge, var(--color-hairline));
+  background: var(--color-panel);
+  backdrop-filter: var(--blur-pane);
+  box-shadow: var(--shadow-pane);
+}
+
+/* Menus, dialogs and the dimmed page behind a dialog fade in as they open.
+   Only their opacity changes: a dialog's transform is what centres it, and a
+   menu must be in its place from the first moment. */
+.fadeIn {
+  animation: fade-in 200ms ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fadeIn {
+    animation: none;
+  }
+}
+
+/* A soft light that follows the pointer across a pane. The pane tells it
+   where the pointer is through --pointer-x and --pointer-y (spotlight.ts). */
+.spotlight {
+  position: relative;
+}
+
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    260px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    color-mix(
+      in srgb,
+      var(--color-accent) calc(var(--spotlight-strength) * 100%),
+      transparent
+    ),
+    transparent 70%
+  );
+  transition: opacity var(--transition-slow);
+}
+
+.spotlight:hover::after {
+  opacity: 1;
+}

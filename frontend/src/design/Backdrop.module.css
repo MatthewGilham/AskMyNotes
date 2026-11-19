@@ -1,0 +1,88 @@
+/* The backdrop sits behind everything (z-index: -1) and never moves with the
+   page. Its colours and strength come from the theme's glow tokens. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Each light is a big blurred circle. Only its position and size are
+   animated (transform), so the browser moves a ready-made picture instead of
+   redrawing the blur on every frame. */
+.glow {
+  position: absolute;
+  width: 56vmax;
+  height: 56vmax;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: var(--glow-idle);
+  transition: opacity 1.2s ease;
+}
+
+/* Charging up: while a reply is in progress the app's root carries
+   data-thinking (App.tsx), and the lights brighten. */
+:global([data-thinking]) .glow {
+  opacity: var(--glow-charged);
+}
+
+.first {
+  left: -18vmax;
+  top: -30vmax;
+  background: var(--glow-1);
+  animation: drift-first 34s ease-in-out infinite alternate;
+}
+
+.second {
+  right: -20vmax;
+  top: 6vmax;
+  background: var(--glow-2);
+  animation: drift-second 41s ease-in-out infinite alternate;
+}
+
+.third {
+  left: 24vmax;
+  bottom: -42vmax;
+  background: var(--glow-3);
+  animation: drift-third 37s ease-in-out infinite alternate;
+}
+
+@keyframes drift-first {
+  to {
+    transform: translate(22vmax, 14vmax) scale(1.15);
+  }
+}
+
+@keyframes drift-second {
+  to {
+    transform: translate(-18vmax, 20vmax) scale(0.9);
+  }
+}
+
+@keyframes drift-third {
+  to {
+    transform: translate(-14vmax, -18vmax) scale(1.2);
+  }
+}
+
+/* A fine grain stops the soft colour from looking banded. */
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* The lights stay where they are with Calm effects, and when the computer
+   asks for less motion. They still brighten for a reply. */
+:global([data-effects="calm"]) .glow {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    animation: none;
+  }
+}

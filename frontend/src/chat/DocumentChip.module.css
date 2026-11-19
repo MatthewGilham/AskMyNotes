@@ -1,0 +1,47 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-control);
+  background: var(--color-wash);
+  font-size: var(--text-s);
+}
+
+.icon {
+  flex: none;
+  color: var(--color-accent-2);
+}
+
+.name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail {
+  flex: none;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.remove {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--space-5);
+  height: var(--space-5);
+  border: none;
+  border-radius: var(--radius-round);
+  background: none;
+  color: var(--color-muted);
+}
+
+.remove:hover {
+  background: var(--color-wash-strong);
+  color: var(--color-text);
+}

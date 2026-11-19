@@ -1,0 +1,33 @@
+.zone {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  height: 100%;
+}
+
+/* The cover shown while files are dragged over the chat: a pane of glass with
+   a dashed accent outline. It covers the main area only, not the sidebar. */
+.cover {
+  composes: pane from "../design/glass.module.css";
+  --pane-edge: transparent;
+  position: absolute;
+  inset: var(--space-3);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  outline: 2px dashed var(--color-accent);
+  outline-offset: -2px;
+  border-radius: var(--radius-pane);
+  font-family: var(--font-display);
+  font-size: var(--text-l);
+  color: var(--color-accent);
+}
+
+/* Children mustn't catch drag events, or the cover would flicker. */
+.cover > * {
+  pointer-events: none;
+}

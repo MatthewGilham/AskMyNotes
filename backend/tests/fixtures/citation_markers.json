@@ -1,0 +1,12 @@
+[
+  ["Before citeturn0search0after.", "Before after."],
+  ["Aciteturn0search0citeturn1search2B", "AB"],
+  ["Aciteturn0search0turn1search2B", "AB"],
+  ["First.\n\nciteturn0search0Second.", "First.\n\nSecond."],
+  ["Before citeturn0search", "Before "],
+  ["Before cit", "Before "],
+  ["cite turn0search0 [S1] [page](https://example.test) \\(x=2\\)", "cite turn0search0 [S1] [page](https://example.test) \\(x=2\\)"],
+  ["othervalue", "othervalue"],
+  ["```python\nprint('hello')\n```", "```python\nprint('hello')\n```"],
+  ["cite ordinary words", "cite ordinary words"]
+]

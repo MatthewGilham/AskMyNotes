@@ -1,0 +1,344 @@
+/* Typography for rendered replies. */
+
+.markdown {
+  font-size: var(--text-m);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+/* While a reply is being written, a caret blinks where the text is arriving:
+   after the last paragraph, heading or list item, however deeply it sits (in
+   a list or a labelled block). The selector reads: one of those, last in its
+   parent, not itself ending in a paragraph or list, and with nothing after
+   any of the boxes it is inside. A reply that ends in a table, code or a
+   picture has no caret. */
+.markdown[data-streaming]
+  :is(p, h1, h2, h3, h4, li):last-child:not(
+    :has(> :is(p, ul, ol):last-child)
+  ):not([data-streaming] :not(:last-child) *)::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 17px;
+  margin-left: 3px;
+  vertical-align: -3px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  box-shadow: 0 0 var(--space-3) var(--color-accent);
+  animation: blink 0.9s steps(2) infinite;
+
+  /* Nested here so it applies to exactly the selector above: when the
+     computer asks for less motion, the caret shows without blinking. */
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.markdown p {
+  margin: 0 0 var(--space-4);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-stretch: 88%;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.markdown h1 {
+  font-size: var(--text-xl);
+}
+
+.markdown h2 {
+  font-size: var(--text-heading);
+}
+
+.markdown h3,
+.markdown h4 {
+  font-size: var(--text-l);
+}
+
+.markdown ul,
+.markdown ol {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-5);
+}
+
+.markdown li {
+  margin-bottom: var(--space-1);
+}
+
+.markdown li::marker {
+  color: var(--color-accent);
+}
+
+.markdown strong {
+  font-weight: 650;
+  color: var(--color-text);
+}
+
+.markdown a {
+  color: var(--color-accent-2);
+  text-decoration: none;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+.markdown blockquote {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-hairline-strong);
+  color: var(--color-muted);
+}
+
+/* Tables have hairlines, and scroll sideways on their own rather than
+   stretching the page. Words in a cell aren't broken, so a wide table scrolls
+   instead of squeezing its words apart. */
+.markdown table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-s);
+}
+
+.markdown th,
+.markdown td {
+  padding: var(--space-2) var(--space-4) var(--space-2) 0;
+  border-bottom: 1px solid var(--color-hairline);
+  text-align: left;
+  overflow-wrap: normal;
+}
+
+.markdown th {
+  color: var(--color-muted);
+  font-weight: 500;
+  border-bottom-color: var(--color-hairline-strong);
+}
+
+.markdown code {
+  font-family: var(--font-code);
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-s);
+  background: var(--color-wash);
+}
+
+.markdown pre {
+  margin: 0 0 var(--space-4);
+  padding: var(--space-4);
+  overflow-x: auto;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-hairline);
+  background:
+    linear-gradient(var(--color-inset), var(--color-inset)), var(--color-panel);
+  line-height: 1.55;
+}
+
+.markdown pre code {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Display maths gets room to breathe, and scrolls if it's very wide. */
+.markdown :global(.katex-display) {
+  margin: var(--space-4) 0;
+  padding: var(--space-2) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown :global(.katex) {
+  font-size: 1.08em;
+}
+
+/* "Beyond your notes": the only place red is used. Like "From the web" below,
+   it is a coloured left edge and a tint fading to the right, laid on the
+   panel colour so its label stays readable when the backdrop brightens. */
+.beyond {
+  margin: var(--space-2) 0 var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-s) var(--radius-card) var(--radius-card)
+    var(--radius-s);
+  border-left: 3px solid var(--color-beyond);
+  background:
+    linear-gradient(90deg, var(--color-beyond-tint), transparent),
+    var(--color-panel);
+}
+
+.beyondLabel {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-beyond);
+}
+
+.beyond > :last-child {
+  margin-bottom: 0;
+}
+
+/* "From the web": the only place blue is used. */
+.web {
+  margin: var(--space-2) 0 var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-s) var(--radius-card) var(--radius-card)
+    var(--radius-s);
+  border-left: 3px solid var(--color-web);
+  background:
+    linear-gradient(90deg, var(--color-web-tint), transparent),
+    var(--color-panel);
+}
+
+.webLabel {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-web);
+}
+
+.web > :last-child {
+  margin-bottom: 0;
+}
+
+/* A citation: a small pill showing the page's site. */
+.markdown a.citation {
+  display: inline-block;
+  margin: 0 0.1em;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-web-edge);
+  border-radius: var(--radius-round);
+  background: var(--color-web-tint);
+  color: var(--color-web);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1.6;
+  vertical-align: 0.08em;
+}
+
+.markdown a.citation:hover,
+.markdown a.citation:focus-visible {
+  border-color: var(--color-web);
+  text-decoration: none;
+}
+
+/* Callout boxes pick out the important parts of an answer. They never replace
+   the red and blue labels of the boxes they can sit inside. Each is a rounded
+   outline in its colour, on the panel colour like the labelled blocks. */
+.callout {
+  margin: var(--space-2) 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-card);
+  background:
+    linear-gradient(var(--color-wash), var(--color-wash)), var(--color-panel);
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.calloutLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.formula {
+  border-color: color-mix(in srgb, var(--color-violet-bright) 40%, transparent);
+  background:
+    linear-gradient(var(--color-violet-tint), var(--color-violet-tint)),
+    var(--color-panel);
+}
+
+.formula .calloutLabel {
+  color: var(--color-violet-bright);
+}
+
+.tip {
+  border-color: color-mix(in srgb, var(--color-aqua) 40%, transparent);
+  background:
+    linear-gradient(var(--color-aqua-tint), var(--color-aqua-tint)),
+    var(--color-panel);
+}
+
+.tip .calloutLabel {
+  color: var(--color-aqua);
+}
+
+/* A worked example's steps are numbered. */
+.example ol {
+  padding-left: var(--space-5);
+}
+
+.example li::marker {
+  font-weight: 650;
+  color: var(--color-muted);
+}
+
+/* Code highlighting, coloured from the design tokens. */
+.markdown :global(.hljs-comment),
+.markdown :global(.hljs-quote) {
+  color: var(--color-faint);
+  font-style: italic;
+}
+
+.markdown :global(.hljs-keyword),
+.markdown :global(.hljs-selector-tag),
+.markdown :global(.hljs-doctag) {
+  color: var(--code-keyword);
+}
+
+.markdown :global(.hljs-string),
+.markdown :global(.hljs-regexp),
+.markdown :global(.hljs-symbol) {
+  color: var(--code-string);
+}
+
+.markdown :global(.hljs-number),
+.markdown :global(.hljs-literal),
+.markdown :global(.hljs-attr) {
+  color: var(--code-number);
+}
+
+.markdown :global(.hljs-title),
+.markdown :global(.hljs-function),
+.markdown :global(.hljs-built_in),
+.markdown :global(.hljs-type) {
+  color: var(--code-name);
+}
+
+.markdown :global(.hljs-variable),
+.markdown :global(.hljs-params),
+.markdown :global(.hljs-property) {
+  color: var(--color-text);
+}

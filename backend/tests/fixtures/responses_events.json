@@ -1,0 +1,1314 @@
+{
+ "text": [
+  {
+   "response": {
+    "id": "resp_0659d097840d753d016ae32af5724c87d18edf8d6ffca3e0d3",
+    "access_programs": null,
+    "created_at": 1793272565.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": null,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "auto",
+    "status": "in_progress",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 0,
+   "type": "response.created"
+  },
+  {
+   "response": {
+    "id": "resp_0659d097840d753d016ae32af5724c87d18edf8d6ffca3e0d3",
+    "access_programs": null,
+    "created_at": 1793272565.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": null,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "auto",
+    "status": "in_progress",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 1,
+   "type": "response.in_progress"
+  },
+  {
+   "item": {
+    "id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+    "content": [],
+    "role": "assistant",
+    "status": "in_progress",
+    "type": "message",
+    "phase": "final_answer"
+   },
+   "output_index": 0,
+   "sequence_number": 2,
+   "type": "response.output_item.added"
+  },
+  {
+   "content_index": 0,
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "output_index": 0,
+   "part": {
+    "annotations": [],
+    "text": "",
+    "type": "output_text",
+    "logprobs": []
+   },
+   "sequence_number": 3,
+   "type": "response.content_part.added"
+  },
+  {
+   "content_index": 0,
+   "delta": "Hello",
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 4,
+   "type": "response.output_text.delta",
+   "obfuscation": "QgWOEGL9j2Y"
+  },
+  {
+   "content_index": 0,
+   "delta": ",",
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 5,
+   "type": "response.output_text.delta",
+   "obfuscation": "WZMQaIqg5xejWh4"
+  },
+  {
+   "content_index": 0,
+   "delta": " nice",
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 6,
+   "type": "response.output_text.delta",
+   "obfuscation": "6xHvlSpaLWM"
+  },
+  {
+   "content_index": 0,
+   "delta": " to",
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 7,
+   "type": "response.output_text.delta",
+   "obfuscation": "AJaUNahKx1Waz"
+  },
+  {
+   "content_index": 0,
+   "delta": " meet",
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 8,
+   "type": "response.output_text.delta",
+   "obfuscation": "D5GlHhOkJ1Y"
+  },
+  {
+   "content_index": 0,
+   "delta": " you",
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 9,
+   "type": "response.output_text.delta",
+   "obfuscation": "eXeulJ7R9OoM"
+  },
+  {
+   "content_index": 0,
+   "delta": ".",
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 10,
+   "type": "response.output_text.delta",
+   "obfuscation": "B9LnTIAtTHyvU9K"
+  },
+  {
+   "content_index": 0,
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "logprobs": [],
+   "output_index": 0,
+   "sequence_number": 11,
+   "text": "Hello, nice to meet you.",
+   "type": "response.output_text.done"
+  },
+  {
+   "content_index": 0,
+   "item_id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+   "output_index": 0,
+   "part": {
+    "annotations": [],
+    "text": "Hello, nice to meet you.",
+    "type": "output_text",
+    "logprobs": []
+   },
+   "sequence_number": 12,
+   "type": "response.content_part.done"
+  },
+  {
+   "item": {
+    "id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+    "content": [
+     {
+      "annotations": [],
+      "text": "Hello, nice to meet you.",
+      "type": "output_text",
+      "logprobs": []
+     }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message",
+    "phase": "final_answer"
+   },
+   "output_index": 0,
+   "sequence_number": 13,
+   "type": "response.output_item.done"
+  },
+  {
+   "response": {
+    "id": "resp_0659d097840d753d016ae32af5724c87d18edf8d6ffca3e0d3",
+    "access_programs": null,
+    "created_at": 1793272565.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [
+     {
+      "id": "msg_0659d097840d753d016ae32af5f34c87d19ed8e54fc4e77f79",
+      "content": [
+       {
+        "annotations": [],
+        "text": "Hello, nice to meet you.",
+        "type": "output_text",
+        "logprobs": []
+       }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+     }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": 1793272566.0,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+     "input_tokens": 12,
+     "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+     },
+     "output_tokens": 11,
+     "output_tokens_details": {
+      "reasoning_tokens": 0
+     },
+     "total_tokens": 23
+    },
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 14,
+   "type": "response.completed"
+  }
+ ],
+ "function_call": [
+  {
+   "response": {
+    "id": "resp_03adf0ac3a0d8781016ae32af653b087d1abd8772c40b8737e",
+    "access_programs": null,
+    "created_at": 1793272566.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "required",
+    "tools": [
+     {
+      "name": "search_notes",
+      "parameters": {
+       "type": "object",
+       "properties": {
+        "query": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "query"
+       ],
+       "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "allowed_callers": null,
+      "async_": null,
+      "defer_loading": null,
+      "description": "Search notes.",
+      "output_schema": null
+     }
+    ],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": null,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "auto",
+    "status": "in_progress",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 0,
+   "type": "response.created"
+  },
+  {
+   "response": {
+    "id": "resp_03adf0ac3a0d8781016ae32af653b087d1abd8772c40b8737e",
+    "access_programs": null,
+    "created_at": 1793272566.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "required",
+    "tools": [
+     {
+      "name": "search_notes",
+      "parameters": {
+       "type": "object",
+       "properties": {
+        "query": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "query"
+       ],
+       "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "allowed_callers": null,
+      "async_": null,
+      "defer_loading": null,
+      "description": "Search notes.",
+      "output_schema": null
+     }
+    ],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": null,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "auto",
+    "status": "in_progress",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 1,
+   "type": "response.in_progress"
+  },
+  {
+   "item": {
+    "arguments": "",
+    "call_id": "call_X6nAedvbVoFGiWy1ghuK7i9K",
+    "name": "search_notes",
+    "type": "function_call",
+    "id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+    "async_": null,
+    "caller": null,
+    "namespace": null,
+    "status": "in_progress"
+   },
+   "output_index": 0,
+   "sequence_number": 2,
+   "type": "response.output_item.added"
+  },
+  {
+   "delta": "{\"",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 3,
+   "type": "response.function_call_arguments.delta",
+   "obfuscation": "edObCukaqVJL3k"
+  },
+  {
+   "delta": "query",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 4,
+   "type": "response.function_call_arguments.delta",
+   "obfuscation": "TdsT2KONYPY"
+  },
+  {
+   "delta": "\":\"",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 5,
+   "type": "response.function_call_arguments.delta",
+   "obfuscation": "H2jGOVvvXEbuF"
+  },
+  {
+   "delta": "de",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 6,
+   "type": "response.function_call_arguments.delta",
+   "obfuscation": "YSpEcyTT8rHNjL"
+  },
+  {
+   "delta": "preci",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 7,
+   "type": "response.function_call_arguments.delta",
+   "obfuscation": "iomJBhrzINA"
+  },
+  {
+   "delta": "ation",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 8,
+   "type": "response.function_call_arguments.delta",
+   "obfuscation": "kv4eDy6eora"
+  },
+  {
+   "delta": "\"}",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 9,
+   "type": "response.function_call_arguments.delta",
+   "obfuscation": "pinkN9N9eMnCey"
+  },
+  {
+   "arguments": "{\"query\":\"depreciation\"}",
+   "item_id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+   "output_index": 0,
+   "sequence_number": 10,
+   "type": "response.function_call_arguments.done"
+  },
+  {
+   "item": {
+    "arguments": "{\"query\":\"depreciation\"}",
+    "call_id": "call_X6nAedvbVoFGiWy1ghuK7i9K",
+    "name": "search_notes",
+    "type": "function_call",
+    "id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+    "async_": null,
+    "caller": null,
+    "namespace": null,
+    "status": "completed"
+   },
+   "output_index": 0,
+   "sequence_number": 11,
+   "type": "response.output_item.done"
+  },
+  {
+   "response": {
+    "id": "resp_03adf0ac3a0d8781016ae32af653b087d1abd8772c40b8737e",
+    "access_programs": null,
+    "created_at": 1793272566.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [
+     {
+      "arguments": "{\"query\":\"depreciation\"}",
+      "call_id": "call_X6nAedvbVoFGiWy1ghuK7i9K",
+      "name": "search_notes",
+      "type": "function_call",
+      "id": "fc_03adf0ac3a0d8781016ae32af6e92087d18691d0ec0afdef01",
+      "async_": null,
+      "caller": null,
+      "namespace": null,
+      "status": "completed"
+     }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "required",
+    "tools": [
+     {
+      "name": "search_notes",
+      "parameters": {
+       "type": "object",
+       "properties": {
+        "query": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "query"
+       ],
+       "additionalProperties": false
+      },
+      "strict": true,
+      "type": "function",
+      "allowed_callers": null,
+      "async_": null,
+      "defer_loading": null,
+      "description": "Search notes.",
+      "output_schema": null
+     }
+    ],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": 1793272567.0,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+     "input_tokens": 45,
+     "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+     },
+     "output_tokens": 20,
+     "output_tokens_details": {
+      "reasoning_tokens": 0
+     },
+     "total_tokens": 65
+    },
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 12,
+   "type": "response.completed"
+  }
+ ],
+ "web_search": [
+  {
+   "response": {
+    "id": "resp_0362d9dbdd8d3647016ae32af7514887d1a626702c46da7eb4",
+    "access_programs": null,
+    "created_at": 1793272567.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [
+     {
+      "type": "web_search",
+      "external_web_access": null,
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+       "city": null,
+       "country": "US",
+       "region": null,
+       "timezone": null,
+       "type": "approximate"
+      },
+      "return_token_budget": "default",
+      "search_content_types": [
+       "text"
+      ]
+     }
+    ],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": null,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "auto",
+    "status": "in_progress",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 0,
+   "type": "response.created"
+  },
+  {
+   "response": {
+    "id": "resp_0362d9dbdd8d3647016ae32af7514887d1a626702c46da7eb4",
+    "access_programs": null,
+    "created_at": 1793272567.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [
+     {
+      "type": "web_search",
+      "external_web_access": null,
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+       "city": null,
+       "country": "US",
+       "region": null,
+       "timezone": null,
+       "type": "approximate"
+      },
+      "return_token_budget": "default",
+      "search_content_types": [
+       "text"
+      ]
+     }
+    ],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": null,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "auto",
+    "status": "in_progress",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": null,
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 0
+     }
+    }
+   },
+   "sequence_number": 1,
+   "type": "response.in_progress"
+  },
+  {
+   "item": {
+    "id": "ws_0362d9dbdd8d3647016ae32af8109487d19d4670df1ce47416",
+    "action": null,
+    "status": "in_progress",
+    "type": "web_search_call"
+   },
+   "output_index": 0,
+   "sequence_number": 2,
+   "type": "response.output_item.added"
+  },
+  {
+   "item_id": "ws_0362d9dbdd8d3647016ae32af8109487d19d4670df1ce47416",
+   "output_index": 0,
+   "sequence_number": 3,
+   "type": "response.web_search_call.in_progress"
+  },
+  {
+   "item_id": "ws_0362d9dbdd8d3647016ae32af8109487d19d4670df1ce47416",
+   "output_index": 0,
+   "sequence_number": 4,
+   "type": "response.web_search_call.searching"
+  },
+  {
+   "item_id": "ws_0362d9dbdd8d3647016ae32af8109487d19d4670df1ce47416",
+   "output_index": 0,
+   "sequence_number": 5,
+   "type": "response.web_search_call.completed"
+  },
+  {
+   "item": {
+    "id": "ws_0362d9dbdd8d3647016ae32af8109487d19d4670df1ce47416",
+    "action": {
+     "type": "search",
+     "queries": [
+      "site:bankofengland.co.uk current Bank Rate October 2026"
+     ],
+     "query": "site:bankofengland.co.uk current Bank Rate October 2026",
+     "sources": null
+    },
+    "status": "completed",
+    "type": "web_search_call"
+   },
+   "output_index": 0,
+   "sequence_number": 6,
+   "type": "response.output_item.done"
+  },
+  {
+   "item": {
+    "id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+    "content": [],
+    "role": "assistant",
+    "status": "in_progress",
+    "type": "message",
+    "phase": "final_answer"
+   },
+   "output_index": 1,
+   "sequence_number": 7,
+   "type": "response.output_item.added"
+  },
+  {
+   "content_index": 0,
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "output_index": 1,
+   "part": {
+    "annotations": [],
+    "text": "",
+    "type": "output_text",
+    "logprobs": []
+   },
+   "sequence_number": 8,
+   "type": "response.content_part.added"
+  },
+  {
+   "content_index": 0,
+   "delta": "The Bank of England\u2019s current base",
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "logprobs": [],
+   "output_index": 1,
+   "sequence_number": 9,
+   "type": "response.output_text.delta",
+   "obfuscation": "bDysjEMmFPlx2X"
+  },
+  {
+   "content_index": 0,
+   "delta": " rate (Bank Rate) is **3.",
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "logprobs": [],
+   "output_index": 1,
+   "sequence_number": 10,
+   "type": "response.output_text.delta",
+   "obfuscation": "3sRbOdi"
+  },
+  {
+   "content_index": 0,
+   "delta": "75%**. ",
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "logprobs": [],
+   "output_index": 1,
+   "sequence_number": 11,
+   "type": "response.output_text.delta",
+   "obfuscation": "STvALxRcv"
+  },
+  {
+   "content_index": 0,
+   "delta": "([bankofengland.co.uk](https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai))",
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "logprobs": [],
+   "output_index": 1,
+   "sequence_number": 12,
+   "type": "response.output_text.delta",
+   "obfuscation": "I3dibd75Li"
+  },
+  {
+   "annotation": {
+    "end_index": 184,
+    "start_index": 66,
+    "title": "Interest rates and Bank Rate: our latest decision | Bank of England \u2013 the UK's central bank",
+    "type": "url_citation",
+    "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai"
+   },
+   "annotation_index": 0,
+   "content_index": 0,
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "output_index": 1,
+   "sequence_number": 13,
+   "type": "response.output_text.annotation.added"
+  },
+  {
+   "content_index": 0,
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "logprobs": [],
+   "output_index": 1,
+   "sequence_number": 14,
+   "text": "The Bank of England\u2019s current base rate (Bank Rate) is **3.75%**. ([bankofengland.co.uk](https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai))",
+   "type": "response.output_text.done"
+  },
+  {
+   "content_index": 0,
+   "item_id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+   "output_index": 1,
+   "part": {
+    "annotations": [
+     {
+      "end_index": 184,
+      "start_index": 66,
+      "title": "Interest rates and Bank Rate: our latest decision | Bank of England \u2013 the UK's central bank",
+      "type": "url_citation",
+      "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai"
+     }
+    ],
+    "text": "The Bank of England\u2019s current base rate (Bank Rate) is **3.75%**. ([bankofengland.co.uk](https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai))",
+    "type": "output_text",
+    "logprobs": []
+   },
+   "sequence_number": 15,
+   "type": "response.content_part.done"
+  },
+  {
+   "item": {
+    "id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+    "content": [
+     {
+      "annotations": [
+       {
+        "end_index": 184,
+        "start_index": 66,
+        "title": "Interest rates and Bank Rate: our latest decision | Bank of England \u2013 the UK's central bank",
+        "type": "url_citation",
+        "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai"
+       }
+      ],
+      "text": "The Bank of England\u2019s current base rate (Bank Rate) is **3.75%**. ([bankofengland.co.uk](https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai))",
+      "type": "output_text",
+      "logprobs": []
+     }
+    ],
+    "role": "assistant",
+    "status": "completed",
+    "type": "message",
+    "phase": "final_answer"
+   },
+   "output_index": 1,
+   "sequence_number": 16,
+   "type": "response.output_item.done"
+  },
+  {
+   "response": {
+    "id": "resp_0362d9dbdd8d3647016ae32af7514887d1a626702c46da7eb4",
+    "access_programs": null,
+    "created_at": 1793272567.0,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": null,
+    "metadata": {},
+    "model": "gpt-6-luna",
+    "object": "response",
+    "output": [
+     {
+      "id": "ws_0362d9dbdd8d3647016ae32af8109487d19d4670df1ce47416",
+      "action": {
+       "type": "search",
+       "queries": [
+        "site:bankofengland.co.uk current Bank Rate October 2026"
+       ],
+       "query": "site:bankofengland.co.uk current Bank Rate October 2026",
+       "sources": null
+      },
+      "status": "completed",
+      "type": "web_search_call"
+     },
+     {
+      "id": "msg_0362d9dbdd8d3647016ae32afa7d0c87d1b3cce73175de6e94",
+      "content": [
+       {
+        "annotations": [
+         {
+          "end_index": 184,
+          "start_index": 66,
+          "title": "Interest rates and Bank Rate: our latest decision | Bank of England \u2013 the UK's central bank",
+          "type": "url_citation",
+          "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai"
+         }
+        ],
+        "text": "The Bank of England\u2019s current base rate (Bank Rate) is **3.75%**. ([bankofengland.co.uk](https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate?utm_source=openai))",
+        "type": "output_text",
+        "logprobs": []
+       }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer"
+     }
+    ],
+    "parallel_tool_calls": true,
+    "temperature": 1.0,
+    "tool_choice": "auto",
+    "tools": [
+     {
+      "type": "web_search",
+      "external_web_access": null,
+      "filters": null,
+      "search_context_size": "medium",
+      "user_location": {
+       "city": null,
+       "country": "US",
+       "region": null,
+       "timezone": null,
+       "type": "approximate"
+      },
+      "return_token_budget": "default",
+      "search_content_types": [
+       "text"
+      ]
+     }
+    ],
+    "top_p": 0.98,
+    "background": false,
+    "completed_at": 1793272570.0,
+    "conversation": null,
+    "max_output_tokens": null,
+    "max_tool_calls": null,
+    "moderation": null,
+    "previous_response_id": null,
+    "prompt": null,
+    "prompt_cache_diagnostics": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": null,
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+     "context": "all_turns",
+     "effort": "medium",
+     "generate_summary": null,
+     "mode": "standard",
+     "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "text": {
+     "format": {
+      "type": "text"
+     },
+     "verbosity": "medium"
+    },
+    "top_logprobs": 0,
+    "truncation": "disabled",
+    "usage": {
+     "input_tokens": 8424,
+     "input_tokens_details": {
+      "cache_write_tokens": 4454,
+      "cached_tokens": 0
+     },
+     "output_tokens": 76,
+     "output_tokens_details": {
+      "reasoning_tokens": 38
+     },
+     "total_tokens": 8500
+    },
+    "user": null,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "store": false,
+    "tool_usage": {
+     "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+       "image_tokens": 0,
+       "text_tokens": 0
+      },
+      "total_tokens": 0
+     },
+     "web_search": {
+      "num_requests": 1
+     }
+    }
+   },
+   "sequence_number": 17,
+   "type": "response.completed"
+  }
+ ]
+}

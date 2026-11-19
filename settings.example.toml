@@ -1,0 +1,82 @@
+# Copy this file to settings.toml and edit it. settings.toml is not committed.
+
+# Used in the new chat greeting, e.g. "Happy Tuesday, Matt".
+user_name = "Your name"
+
+# The port the app listens on (on this PC only).
+port = 8000
+
+# LibreOffice converts old .ppt files to .pptx. Use the line for this computer
+# and delete the other. Single quotes keep Windows backslashes as they are.
+# Write paths out in full: "~" is not expanded.
+# Windows:
+libreoffice_path = 'C:\Program Files\LibreOffice\program\soffice.exe'
+# macOS:
+# libreoffice_path = '/Applications/LibreOffice.app/Contents/MacOS/soffice'
+
+# Images attached to a message: how many, and how large each may be.
+max_images_per_message = 5
+max_image_size_mb = 10
+
+# Documents (Word, Excel, PowerPoint, PDF) attached to a message: how many, how
+# large each file may be, and how much text all of a message's documents may
+# hold together, in tokens (about 4 characters each). The last must be at most
+# half of context_budget_tokens.
+max_documents_per_message = 5
+max_document_size_mb = 25
+max_document_tokens = 100000
+
+# Files that Python makes (a chart, a CSV): at most this many per reply, each
+# at most this big. Anything over is left out, and the answer says so.
+max_generated_files_per_reply = 10
+max_generated_file_mb = 25
+
+# How much of a chat is sent to the model, in tokens (about 4 characters each).
+# Past this, the older part is summarised. The full chat is always kept.
+# GPT-6 Luna's context window is far larger; 200000 stays well below it, and
+# below the size where long-context prices are reported to start.
+context_budget_tokens = 200000
+
+# A slide or page longer than this many characters is split into parts
+# (each keeps its slide or page number). Most slides are far shorter.
+max_chunk_characters = 3000
+
+# How many slides or pages each notes search gives the model. It judges which
+# are relevant and lists only the ones its answer used.
+notes_search_results = 8
+
+# Clickable prompts on the new chat screen.
+example_prompts = [
+  "Explain a topic from my notes",
+  "Summarise last week's lecture",
+]
+
+# What the models cost, in US dollars per million tokens, from OpenAI's pricing
+# page. The app uses these to work out each chat's API cost. A price change only
+# affects calls made afterwards. "Cached" input is text OpenAI has seen recently.
+[prices]
+chat_input = 0.10
+chat_cached_input = 0.01
+chat_output = 0.50
+embedding_input = 0.13
+# Dollars per web search (OpenAI charges $10 per 1,000 searches).
+web_search_call = 0.01
+# Dollars per Python sandbox: OpenAI charges $0.03 for each 1 GB container.
+python_session = 0.03
+
+# Where web searches say you are: a two-letter country code and a timezone name.
+[web_search]
+country = "GB"
+timezone = "Europe/London"
+
+# One [[modules]] block per module. The folder is only ever read.
+# Use the folder line for this computer and delete the other. On a Mac, OneDrive
+# folders are under ~/Library/CloudStorage/; check the exact name in Finder
+# (right-click the folder, Get Info, "Where").
+[[modules]]
+name = "Example Module"
+short_name = "EM"
+# Windows:
+folder = 'C:\Path\To\Example Module\Lecture Slides'
+# macOS:
+# folder = '/Users/yourname/Library/CloudStorage/OneDrive-YourUniversity/Path/To/Example Module/Lecture Slides'

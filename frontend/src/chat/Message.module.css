@@ -1,0 +1,352 @@
+/* Your message: a soft glass bubble on the right, with one tight corner. It
+   sits on the panel colour, without a blur, because the scrolling column is
+   never blurred. */
+.user {
+  position: relative;
+  align-self: flex-end;
+  max-width: 80%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pane) var(--radius-pane) var(--radius-s)
+    var(--radius-pane);
+  background:
+    linear-gradient(160deg, var(--color-wash-strong), var(--color-wash)),
+    var(--color-panel);
+  border: 1px solid var(--color-hairline);
+  white-space: pre-wrap;
+}
+
+/* Edit sits just left of the bubble's bottom corner, so the bubble is only as
+   tall as its text and the button never covers the answer below. */
+.editAction {
+  position: absolute;
+  right: calc(100% + var(--space-2));
+  bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-s);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.editAction:hover {
+  color: var(--color-text);
+}
+
+.user:hover .editAction,
+.editAction:focus-visible {
+  opacity: 1;
+}
+
+/* The editor asks for 560px but never more than its bubble has, so it fits at
+   every width. */
+.editor {
+  width: 560px;
+  max-width: 100%;
+}
+.editor textarea {
+  display: block;
+  width: 100%;
+  min-height: 110px;
+  padding: var(--space-3);
+  resize: vertical;
+  color: var(--color-text);
+  background: var(--color-inset);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-m);
+  font: inherit;
+  line-height: 1.5;
+}
+.editExplanation {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+.editError {
+  margin-top: var(--space-2);
+  color: var(--color-error);
+  font-size: var(--text-s);
+}
+.editButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.editButtons button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-control);
+  font-weight: 500;
+  transition: background var(--transition-fast);
+}
+.editButtons button:hover:enabled {
+  background: var(--color-wash-strong);
+}
+/* Save & resend is the main action, so it takes the accent. */
+.editButtons button:last-child {
+  background: var(--gradient-signature);
+  border-color: transparent;
+  color: var(--color-on-accent);
+}
+.editButtons button:disabled {
+  opacity: 0.45;
+}
+
+.reply {
+  position: relative;
+  padding-bottom: var(--space-6); /* room for the hover actions */
+}
+
+/* Small markers and notices under an answer sit on the panel colour, so their
+   muted text stays readable whatever the backdrop is doing behind them. */
+.stopped {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-round);
+  background:
+    linear-gradient(var(--color-wash), var(--color-wash)), var(--color-panel);
+  border: 1px solid var(--color-hairline);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.actions {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  gap: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.reply:hover .actions,
+.actions:focus-within {
+  opacity: 1;
+}
+
+.action {
+  display: grid;
+  place-items: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  border: none;
+  border-radius: var(--radius-s);
+  background: none;
+  color: var(--color-muted);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.action:hover {
+  background: var(--color-wash-strong);
+  color: var(--color-text);
+}
+
+/* Errors are amber: red is kept for "Beyond your notes". */
+.error {
+  margin-top: var(--space-3);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-error-edge);
+  background:
+    linear-gradient(var(--color-error-tint), var(--color-error-tint)),
+    var(--color-panel);
+  font-size: var(--text-s);
+  color: var(--color-muted);
+}
+
+.errorIcon {
+  flex-shrink: 0;
+  margin-top: var(--space-1);
+  color: var(--color-error);
+}
+
+.errorText {
+  flex: 1;
+}
+
+.errorTitle {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: center;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-error-edge);
+  border-radius: var(--radius-round);
+  background: none;
+  font-size: var(--text-s);
+  font-weight: 500;
+  color: var(--color-error);
+  transition: background var(--transition-fast);
+}
+
+.retry:hover {
+  background: var(--color-error-tint);
+}
+
+/* Three dots that pulse while the reply hasn't started yet. */
+.typing {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+}
+
+.typing span {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-round);
+  background: var(--gradient-signature);
+  animation: typing 1.2s ease-in-out infinite;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.userImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.userDocuments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.userDocuments:not(:last-child) {
+  margin-bottom: var(--space-2);
+}
+
+.userImages:not(:last-child) {
+  margin-bottom: var(--space-2);
+}
+
+.userImages img {
+  max-width: 100%;
+  max-height: 180px;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--color-hairline);
+}
+
+/* A status line ("Searching your notes…" and the rest): a band of the accent
+   passes through the words while it shows. The icons keep their own colours. */
+.searching {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  font-size: var(--text-s);
+  color: transparent;
+  background: linear-gradient(
+      90deg,
+      var(--color-muted) 35%,
+      var(--color-accent) 50%,
+      var(--color-muted) 65%
+    )
+    0 0 / 220% 100%;
+  background-clip: text;
+  animation: scan 1.6s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -120% 0;
+  }
+}
+
+.searchingIcon {
+  color: var(--color-accent-2);
+  animation: searching 1.2s ease-in-out infinite;
+}
+
+.searchingWebIcon {
+  color: var(--color-web);
+  animation: searching 1.2s ease-in-out infinite;
+}
+
+@keyframes searching {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.original {
+  display: inline-block;
+  color: var(--color-accent-2);
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-2);
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 3px;
+}
+.original:hover {
+  text-decoration-color: currentColor;
+}
+
+/* With reduced motion nothing pulses or sweeps: status lines are plain muted
+   text. */
+@media (prefers-reduced-motion: reduce) {
+  .searching {
+    animation: none;
+    background: none;
+    color: var(--color-muted);
+  }
+  .searchingIcon,
+  .searchingWebIcon,
+  .typing span {
+    animation: none;
+  }
+}

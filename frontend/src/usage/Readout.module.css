@@ -1,0 +1,60 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: var(--radius-round);
+  background: none;
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.trigger:hover,
+.trigger:focus-visible {
+  background: var(--color-wash-strong);
+  color: var(--color-text);
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  z-index: 30;
+  width: max-content;
+  max-width: 260px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-raised);
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  pointer-events: none;
+}
+
+.wrap:hover .tooltip,
+.wrap:focus-within .tooltip {
+  display: block;
+}
+
+/* In the header, opening downwards, clear of the pill, and lining up with the
+   right edge. */
+.below {
+  top: calc(100% + var(--space-3));
+  right: 0;
+}
+
+/* In the sidebar, opening upwards from the left edge. */
+.above {
+  bottom: calc(100% + var(--space-1));
+  left: 0;
+}

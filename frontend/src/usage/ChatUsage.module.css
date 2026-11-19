@@ -1,0 +1,22 @@
+.ringTrack,
+.ringFill,
+.ringWarn {
+  fill: none;
+  stroke-width: 2;
+}
+
+.ringTrack {
+  stroke: var(--color-border-strong);
+}
+
+.ringFill {
+  stroke: var(--color-aqua);
+}
+
+.ringWarn {
+  stroke: var(--color-error);
+}
+
+.note {
+  color: var(--color-muted);
+}

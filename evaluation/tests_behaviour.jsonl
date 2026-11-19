@@ -1,0 +1,13 @@
+{"question": "Can you give me a quick recipe for a vegetable stir fry?", "expect": {"searches": false}}
+{"question": "Who do you think will win the Premier League this season?", "expect": {"searches": false}}
+{"question": "Hi! How are you today?", "expect": {"searches": false}}
+{"question": "How is basic earnings per share calculated?", "expect": {"searches": true, "sources_listed": true}}
+{"question": "What's the difference between systematic and unsystematic risk?", "expect": {"searches": true, "sources_listed": true}}
+{"question": "Only from my AFA notes: how is basic earnings per share calculated?", "expect": {"searches": true, "source_modules": ["AFA"]}}
+{"question": "From my AFA and FR notes, how are consolidated financial statements prepared?", "expect": {"searches": true, "source_modules": ["AFA", "FR"]}}
+{"question": "Using only my IPA notes, what is the capital asset pricing model?", "expect": {"searches": true, "source_modules": ["IPA"]}}
+{"question": "How does the Basel III liquidity coverage ratio work?", "expect": {"searches": true, "not_covered": true, "beyond_label": true, "sources_listed": false}}
+{"question": "Explain the capital asset pricing model, and also tell me about its history and who won a Nobel Prize for it.", "expect": {"searches": true, "beyond_label": true}}
+{"question": "How is straight-line depreciation calculated?", "expect": {"searches": true, "web_searches": false}}
+{"question": "What is the Bank of England base rate today?", "expect": {"web_searches": true}}
+{"question": "Give me a simple pancake recipe.", "expect": {"searches": false, "web_searches": false}}

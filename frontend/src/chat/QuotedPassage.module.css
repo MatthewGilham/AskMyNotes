@@ -1,0 +1,22 @@
+/* Quotes remain bounded while complete equations can scroll horizontally. */
+.quote {
+  border-left: 2px solid var(--color-accent-2);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+  background: var(--color-wash);
+  border-radius: var(--radius-s);
+  max-height: 240px;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  font-size: var(--text-s);
+}
+.label {
+  color: var(--color-accent-2);
+  font-size: var(--text-xs);
+  margin-bottom: var(--space-1);
+}
+.quote summary {
+  cursor: pointer;
+  color: var(--color-muted);
+}

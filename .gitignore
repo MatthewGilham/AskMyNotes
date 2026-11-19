@@ -1,0 +1,35 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+
+# Lecture content and app data (update when folders are decided)
+data/
+
+# Real settings (folders, name); settings.example.toml is committed instead
+settings.toml
+
+# Playwright output
+playwright-report/
+test-results/
+
+# Generated from lecture content (also covered by data/ above)
+data/notes_markdown/
+data/pptx_copies/
+data/libreoffice_profile/
+data/libreoffice_work/
+
+# The notes database (also covered by data/ above)
+data/chroma/
+
+# Evaluation questions and runs: based on course material, kept private
+evaluation/tests_small.jsonl
+evaluation/results/run_*.json

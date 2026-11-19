@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AskMyNotes</title>
+    <!-- The browser tab's icon: the mark in Volt colours (public/favicon.svg). -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Shows the saved colour theme and effects level before the page first
+      // draws, so a saved theme never flashes the default one first. The app
+      // reads the same saved value when it starts (src/design/appearance.ts).
+      try {
+        const saved = JSON.parse(localStorage.getItem("askmynotes-appearance"));
+        if (saved.theme === "aurora" || saved.theme === "ice")
+          document.documentElement.dataset.theme = saved.theme;
+        if (saved.effects === "calm")
+          document.documentElement.dataset.effects = "calm";
+      } catch {
+        // Nothing saved, a damaged value or storage switched off: Volt, Full.
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

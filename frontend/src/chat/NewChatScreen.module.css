@@ -1,0 +1,128 @@
+.screen {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+}
+
+.centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: var(--content-width);
+  /* Sits a little above the true centre, which looks better balanced. */
+  margin-bottom: var(--space-8);
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--space-3), 2vw, var(--space-5));
+  max-width: 100%;
+  margin-bottom: var(--space-4);
+}
+
+/* The mark grows with the greeting, and glows in the accent. */
+.greeting svg {
+  flex: none;
+  width: clamp(52px, 7vw, 92px);
+  height: auto;
+  filter: drop-shadow(
+    0 0 28px color-mix(in srgb, var(--color-accent) 45%, transparent)
+  );
+}
+
+/* The greeting is set large and tight, like a poster. Its colour is a wide
+   strip of the text colour with a band of the accent in the middle, seen
+   through the letters. The strip rests with the band off to the right, so the
+   letters are plain; as the screen loads it slides across once. */
+.greeting h1 {
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-greeting);
+  font-weight: 750;
+  font-stretch: 82%;
+  letter-spacing: -0.015em;
+  line-height: 0.92;
+  overflow-wrap: anywhere;
+  color: transparent;
+  background: linear-gradient(
+      100deg,
+      var(--color-text) 42%,
+      var(--color-accent) 50%,
+      var(--color-text) 58%
+    )
+    0 0 / 280% 100%;
+  background-clip: text;
+  animation: sheen 2.4s 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.name {
+  display: block;
+}
+
+@keyframes sheen {
+  from {
+    background-position: 100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .greeting h1 {
+    animation: none;
+  }
+}
+
+/* The example prompts are cards, two to a row. */
+.prompts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.prompt {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-card);
+  /* Dark glass without the blur, so the muted text stays readable when the
+     backdrop behind a card is at its brightest. */
+  background: var(--color-panel);
+  font-size: var(--text-s);
+  line-height: 1.45;
+  color: var(--color-muted);
+  text-align: left;
+  transition:
+    transform var(--transition-slow),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+/* A card lifts a little under the pointer. */
+.prompt:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+  color: var(--color-text);
+}
+
+.prompt:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* One column in a narrow window. */
+@media (max-width: 699px) {
+  .prompts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prompt {
+    transition: none;
+  }
+}

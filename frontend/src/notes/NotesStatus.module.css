@@ -1,0 +1,127 @@
+.notes {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border-top: 1px solid var(--color-hairline);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dot {
+  width: var(--space-2);
+  height: var(--space-2);
+  flex-shrink: 0;
+  border-radius: var(--radius-round);
+  background: var(--color-accent-2);
+  box-shadow: 0 0 var(--space-2) var(--color-accent-2);
+}
+
+.dotUpdating {
+  background: var(--color-accent);
+  box-shadow: 0 0 var(--space-2) var(--color-accent);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.label {
+  flex: 1;
+  min-width: 0;
+}
+
+.refresh {
+  display: grid;
+  place-items: center;
+  padding: var(--space-1);
+  border: none;
+  border-radius: var(--radius-s);
+  background: none;
+  color: var(--color-muted);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.refresh:hover:not(:disabled) {
+  background: var(--color-wash-strong);
+  color: var(--color-accent-2);
+}
+
+.refresh:disabled {
+  cursor: default;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.track {
+  height: 3px;
+  margin-top: var(--space-2);
+  border-radius: var(--radius-round);
+  background: var(--color-hairline-strong);
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: var(--gradient-signature);
+  transition: width var(--transition-slow);
+}
+
+.unreadable {
+  margin-top: var(--space-2);
+  color: var(--color-faint);
+}
+
+.unreadable summary {
+  cursor: pointer;
+}
+
+.unreadable ul {
+  margin: var(--space-1) 0 0;
+  padding-left: var(--space-4);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.dotFailed {
+  background: var(--color-error);
+  box-shadow: 0 0 var(--space-2) var(--color-error);
+}
+
+.error {
+  margin-top: var(--space-2);
+  color: var(--color-error);
+}
+
+.unreadable li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-1);
+}
+
+.fileName {
+  color: var(--color-muted);
+}
+
+.reason {
+  color: var(--color-faint);
+}
+
+.inUse {
+  margin-top: var(--space-2);
+  overflow-wrap: anywhere;
+}

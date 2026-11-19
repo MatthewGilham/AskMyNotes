@@ -1,0 +1,97 @@
+/* The "Working" panel's list: a glass panel like "Found online". The summary
+   pill is shared with Sources. */
+.list {
+  margin: var(--space-2) 0 0;
+  padding: var(--space-2) var(--space-4);
+  list-style: none;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-card);
+  background: var(--color-panel);
+  font-size: var(--text-s);
+}
+
+.run {
+  padding: var(--space-3) 0;
+}
+
+.run + .run {
+  border-top: 1px solid var(--color-hairline);
+}
+
+.input,
+.result {
+  overflow-x: auto;
+}
+
+.input {
+  color: var(--color-muted);
+}
+
+.result {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  color: var(--color-text);
+}
+
+.equals {
+  color: var(--color-faint);
+}
+
+/* Inside the panel the maths sits tight against its line. */
+.list .run p {
+  margin: 0;
+}
+
+.list :global(.katex) {
+  font-size: 1em;
+}
+
+.refused {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-muted);
+}
+
+/* A run of Python: its code (drawn like any code block), then its output. */
+.python {
+  min-width: 0;
+}
+
+.python :global(pre) {
+  margin-bottom: var(--space-2);
+}
+
+.label {
+  margin-bottom: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+/* What Python printed, on the same darker inset as code. */
+.output {
+  max-height: 320px;
+  margin: 0 0 var(--space-2);
+  padding: var(--space-3);
+  overflow: auto;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-m);
+  background: var(--color-inset);
+  font-family: var(--font-code);
+  font-size: var(--text-s);
+  white-space: pre;
+}
+
+.output:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.note {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}

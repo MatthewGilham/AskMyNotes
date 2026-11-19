@@ -1,0 +1,9 @@
+/* Lines up with the notes status above it, and sits close under it. */
+.row {
+  margin-top: calc(-1 * var(--space-2));
+  padding: 0 var(--space-2) var(--space-3);
+}
+
+.note {
+  color: var(--color-muted);
+}
